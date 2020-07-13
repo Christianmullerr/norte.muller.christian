@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HardwarePC.Data.Model.Artist>
+
+@{ ViewBag.Title = "Lista de Profesionales"; }
+
+<div class="post">
+    <h2 class="title"><a href="#"> Lista de Profesionales</a></h2>
+    <p class="byline">Hay un total de @Enumerable.Count(Model) Profesionales</p>
+    <p>
+        <a href="/Artist/Create" class="miBoton">Nuevo Profesional</a>
+    </p>
+    <div>
+        <table id="tablaProductos">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LifeSpan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalProducts)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullName)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.LifeSpan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Country)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalProducts)
+    </td>
+
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+    </td>
+</tr>            }
+        </table>
+    </div>
+</div>

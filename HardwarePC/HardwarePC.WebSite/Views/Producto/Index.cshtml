@@ -1,0 +1,78 @@
+﻿@model IEnumerable<HardwarePC.Data.Model.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="post">
+        <h2 class="title" style="margin-top:20px">Lista de Productos</h2><br />
+        <p>
+            <a href="/Producto/Create" class="miBoton">Nuevo producto</a>
+        </p>
+        <p style="margin-top:20px">Hay un total de: @Enumerable.Count(Model) productos</p><br>
+
+        <div>
+            <table id="tablaProductos">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArtistId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.QuantitySold)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AvgStars)
+                    </th>
+                    <th>
+                        Operaciones
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.ArtistId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.QuantitySold)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.AvgStars)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar - ", "Edit", new { id = item.Id })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+            <hr />
+
+        </div>
+
+    </div>
+<hr />

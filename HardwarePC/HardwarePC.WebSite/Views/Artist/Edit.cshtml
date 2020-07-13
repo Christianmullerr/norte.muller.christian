@@ -1,0 +1,72 @@
+﻿@model HardwarePC.Data.Model.Artist
+
+@{ ViewBag.Title = "Editar Profesional"; }
+
+<div class="post">
+    <h2 class="title"><a href="#"> Editar Profesional</a></h2>
+    <p class="byline">
+        <h4>Profesional: @Model.FullName</h4>
+    </p>
+    <div>
+        @using (Html.BeginForm())
+        {
+<div class="form-horizontal">
+    <hr />
+    <span class="text-danger">@ViewBag.MessageDanger</span>
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName)
+        <div>
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName)
+        <div>
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LifeSpan)
+        <div>
+            @Html.EditorFor(model => model.LifeSpan)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Country)
+        <div>
+            @Html.EditorFor(model => model.Country)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        <div>
+            @Html.EditorFor(model => model.Description)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TotalProducts)
+        <div>
+            @Html.EditorFor(model => model.TotalProducts)
+        </div>
+    </div>
+    @Html.HiddenFor(model => model.CreatedOn)
+    @Html.HiddenFor(model => model.CreatedBy)
+</div>
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Guardar" />
+                    </div>
+                </div>}
+        <div>
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    </div>
+</div>
+
+
+

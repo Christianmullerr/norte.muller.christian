@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ArtShop</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrapper">
+
+        <header id="header">
+            <div id="logo">
+                <h1><a href="/">ArtShop</a></h1>
+                <h2><span>Pasión por el Arte</span></h2>
+            </div>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li id="Home"><a href="/">Home</a></li>
+                @if (Request.IsAuthenticated && User.IsInRole("Administrador"))
+                {
+                    <li id="Productos"><a href="/Producto/">Productos</a></li>
+                    <li><a href="/Artist/">Artistas</a></li>
+                }
+                <li id="Acerca"><a href="/home/about/">Acerca</a></li>
+                <li id="Contacto"><a href="/home/contact/">Contacto</a></li>
+                <li id="Ubicacion"><a href="/home/Ubicacion/">Ubicación</a>
+                <li><a href="/Shop/Index">Catálogo</a></li>
+                <li id="CarritoCompra"><a href="/CartItem/Index">Carrito de Compras</a>
+            
+               
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </nav>
+
+        <!-- Contenido -->
+        <section>
+
+            <article>
+                @RenderBody()
+            </article>
+
+        </section>
+
+        <!-- Contenido relacionado-->
+        <aside>
+            <article>
+                <ul>                    
+                    <li id="search">
+                        <h2 class="search">Buscar productos</h2>
+                        <form method="get" action="">
+                            <fieldset>
+                                <input type="text" id="search-text" name="s" value="" autocomplete="off" />
+                                <input type="submit" id="search-submit" value="Buscar" />
+                            </fieldset>
+                        </form>
+                    </li>
+                </ul>
+            </article>
+        </aside>
+
+        <!-- Pie de pagina -->
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ArtShop | <a href="#">Términos y Condiciones</a> </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>

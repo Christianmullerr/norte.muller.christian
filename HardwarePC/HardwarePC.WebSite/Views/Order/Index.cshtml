@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HardwarePC.Data.Model.OrderDetail>
+
+@{ ViewBag.Title = "Finalizar Compra"; }
+<h2>Orden de pedido</h2>
+
+
+<table id="tablaProductos">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.OrderNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+        </tr>
+    }    
+</table>
+
+<p style="margin-top:10px;text-align: right">
+    <a href="/Order/finalizarCompra" class="miBoton">Continuar con la Compra</a>
+</p>

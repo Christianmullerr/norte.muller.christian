@@ -1,0 +1,23 @@
+﻿
+@model IEnumerable<HardwarePC.Data.Model.Product>
+
+@{ ViewBag.Title = "Catálogo de Productos"; }
+
+<h2>Catálogo de Productos</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+<div class="columnaProducto">
+    <div class="cardProducto">
+        <img src="~/content/products/@Html.DisplayFor(model => item.Image)" alt="imagen" style="width:100px;height:100px;margin-top:15px" />
+        <h1>@Html.DisplayFor(model => item.Title)</h1>
+        <p class="precioProducto">$@Html.DisplayFor(model => item.Price)</p>
+        <p>.</p>
+        @Html.ActionLink("Comprar", "Buy", new { id = item.Id })
+    </div>
+</div>
+    }
+
+</div>

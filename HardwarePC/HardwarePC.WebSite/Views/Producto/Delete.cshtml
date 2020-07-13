@@ -1,0 +1,44 @@
+﻿@model HardwarePC.Data.Model.Product
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="post">
+    <h2 class="title"><a href="#"> Eliminar producto</a></h2>
+    <p class="byline">
+        <h4>¿Eliminar este producto?</h4>
+    </p>
+    <div>
+        @using (Html.BeginForm())
+        {
+
+            <div class="form-horizontal">
+                <hr />
+                <span class="text-danger">@ViewBag.MessageDanger</span>
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label" })
+                    <div class="separator">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })
+                    <div class="separator">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 separator">
+                        <input type="submit" value="Eliminar" class="btn-input" />
+                        @Html.ActionLink("Volver a la lista", "Index", null, new { @class ="" })
+                    </div>
+                </div>
+            </div>}
+    </div>
+</div>

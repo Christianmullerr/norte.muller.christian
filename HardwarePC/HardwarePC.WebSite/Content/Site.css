@@ -1,0 +1,494 @@
+﻿/*IMPORTANTE - No modificar estos estilos, ya que son imprescindibles para que la pagina se vea correctamente.*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0px;
+    background-color: #C0C0C0;
+    text-align: justify;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #7D807A;
+}
+
+h1, h2, h3 {
+    color: #AA2808;
+}
+
+
+p, blockquote, ul, ol {
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+ul, ol, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a {
+    text-decoration: underline;
+    color: #E14949;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: #C11414;
+    }
+
+/************************** layout **************************/
+
+#wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+#header {
+    height: 277px;
+    background: url('/content/img/mainbanner.jpg') no-repeat left top;
+}
+
+/**** Logo ****/
+#logo {
+    float: left;
+    width: 270px;
+    height: 70px;
+    margin: 50px;
+    padding-left: 30px;
+    text-align: center;
+}
+
+    #logo h1 {
+        margin: 0;
+        padding: 10px 0px 0px 0px;
+        /*text-transform: lowercase;*/
+        font: normal 46px 'Open Sans', Arial, sans-serif;
+    }
+
+    #logo h2 {
+        margin: -2px 0 0 0;
+        padding: 0;
+        text-transform: lowercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: italic;
+        color: #FFFFFF;
+    }
+
+    #logo a {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+/**** Menu ****/
+#menu {
+    width: 1200px;
+    height: 41px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    background: url('/content/img/mainmenu.jpg') no-repeat left top;
+}
+
+    #menu ul {
+        margin: 0;
+        list-style: none;
+        line-height: normal;
+    }
+
+    #menu li {
+        display: inline;
+        text-align: center;
+    }
+
+    #menu a {
+        height: 33px;
+        display: block;
+        float: left;
+        padding: 8px 20px 0px 20px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: lowercase;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: italic;
+        color: #FFFFFF;
+    }
+
+        #menu a:hover, #menu .active a {
+            background: #C11212;
+            color: #FFFFFF;
+        }
+
+
+/*
+#page {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0px 0px;
+}
+*/
+
+/*
+#content {
+    float: left;
+    width: 500px;
+    padding: 20px 20px 0px 20px;
+    background-color: #FFFFFF;
+    min-height: 500px;
+}
+*/
+
+
+.post {
+    background: url('/content/img/post.gif') repeat-x left bottom;
+    margin: 0px 0px 30px 0px;
+}
+
+    .post .title {
+        background: url('/content/img/item.jpg') no-repeat left 0px;
+        margin: 0px;
+        color: #BF0B0B;
+    }
+
+        .post .title a {
+            padding: 0px 0px 0px 40px;
+            letter-spacing: -1px;
+            text-decoration: none;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 28px;
+            font-weight: normal;
+            font-style: italic;
+            color: #BF0B0B;
+        }
+
+    .post .entry {
+        padding: 20px 0px;
+    }
+
+    .post img {
+        float: left;
+        padding: 15px 0px;
+    }
+
+    .post .byline {
+        padding-left: 40px;
+        font-size: 12px;
+        font-style: italic;
+        text-transform: lowercase;
+        color: #7D807A;
+    }
+
+    /*-----------------*/
+    /*  Form Producto  */
+    /*-----------------*/
+    .post .form-horizontal {
+        margin-left: 10px;
+    }
+
+        .post .form-horizontal .form-group{
+            padding-top: 5px;
+            font-style: normal;
+            color: black;
+        }
+
+            .post .form-horizontal .form-group .separator {
+                
+            }
+
+            .form-control {
+                width: 200px;
+            }
+
+.btn-input {
+    width: 120px;
+    height: 30px;
+    position: relative;
+    display: block;
+    /*margin: 20px;*/
+    border-radius: 10px;
+    border: none;
+    background: #425edf;
+    color: white;
+    font-size: 15px;
+    transition: background 0.4s;
+    cursor: pointer;
+}
+
+
+
+
+section {
+    background-color: #fafafa;
+    padding: 10px 20px 0px 20px;
+    overflow: auto;
+    float: left;
+    width: 800px;
+    min-height: 500px;
+}
+
+/* Aside */
+aside {
+    float: right;
+    width: 340px;
+    padding: 10px 10px 0px 10px;
+    background-color: lightgray;
+    min-height: 590px;
+}
+
+
+
+/* Sidebar */
+/*
+#sidebar {
+    float: right;
+    width: 300px;
+    margin: 0px;
+    overflow: auto;
+    padding: 10px 0px 10px 30px;
+    background-color: lightgray;
+    min-height: 500px;
+}
+
+    #sidebar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: normal;
+    }
+
+    #sidebar li {
+        margin-bottom: 1px;
+    }
+
+        #sidebar li ul {
+            margin: 0px;
+            padding: 0px 0px 5px 5px;
+        }
+
+        #sidebar li li {
+            margin: 0;
+            padding: 9px 0px;
+            border: none;
+            background: none;
+        }
+
+    #sidebar h2 {
+        margin: 0px;
+        padding: 0px 0px 10px 0px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: italic;
+        color: #BF0B0B;
+    }
+
+    #sidebar h3 {
+        font-size: 77%;
+        color: #110404;
+    }
+
+    #sidebar p {
+        margin: 0;
+        line-height: normal;
+        color: #D4C792;
+    }
+
+    #sidebar a {
+        border: none;
+        text-decoration: none;
+        color: #7D807A;
+    }
+
+        #sidebar a:hover {
+            text-decoration: underline;
+        }
+*/
+
+#header-search {
+    width: 940px;
+    height: 51px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+}
+
+#search {
+    height: 51px;
+    margin: 0 auto;
+    padding: 0px 0px 40px 0px;
+}
+
+    #search form {
+        margin: 0;
+        padding: 12px 0px 0 0;
+    }
+
+        #search form fieldset {
+            border: none;
+        }
+
+            #search form fieldset input {
+                font-size: 14px;
+            }
+
+#search-submit {
+    margin-left: 10px;
+    padding: 4px 4px;
+    border: none;
+    background: #C11212;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 30px;
+    padding: 20px 0px 0px 0px;
+    background-color: black;
+    color: #9C9C9C;
+}
+
+
+/*----------------------------------ACERCA DE NOSOTROS-----------------------------------------*/
+/*----------------------------------FOTOS DE NOSOTROS-----------------------------------------*/
+foto_nosotros {
+    display: grid;
+    padding: 2rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: 160px 160px;
+    font-size: 1rem;
+}
+
+.foto_nosotros {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 1rem;
+}
+
+
+
+footer p {
+    margin: 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+footer a {
+    text-decoration: underline;
+    color: #808080;
+}
+
+    footer a:hover {
+        text-decoration: none;
+    }
+
+
+
+#tablaProductos {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #tablaProductos td, #customers th {
+        border: 1px solid #B2B2B2;
+        padding: 8px;
+    }
+
+    #tablaProductos tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #tablaProductos tr:hover {
+        background-color: #ddd;
+    }
+
+    #tablaProductos th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        border: 2px solid #A4A4A4;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+.miBoton {
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background-color: #77b55a;
+    border-radius: 4px;
+    border: 1px solid #4b8f29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+}
+
+    .miBoton:hover {
+        background-color: #72b352;
+    }
+
+    .miBoton:active {
+        position: relative;
+        top: 1px;
+    }
+
+/*
+li:hover {
+    background: red;
+}
+*/
+
+.cardProducto {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.precioProducto {
+    color: grey;
+    font-size: 22px;
+}
+
+.cardProducto button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .cardProducto button:hover {
+        opacity: 0.7;
+    }
+
+.columnaProducto {
+    margin-top: 20px;
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
